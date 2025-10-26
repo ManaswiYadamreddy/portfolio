@@ -1,0 +1,297 @@
+:root {
+  /* Palette */
+  --tone-1: #fbfbfb;  /* light sage */
+  --tone-2: #84A98C;  /* soft green */
+  --tone-3: #52796F;  /* teal green */
+  --tone-4: #354F52;  /* deep teal */
+  --tone-5: #2F3E46;  /* dark slate */
+
+  /* Theme mapping */
+  --bg-primary: var(--tone-5);
+  --bg-secondary: var(--tone-4);
+  --text-primary: var(--tone-1);
+  --text-secondary: rgba(219, 227, 213, 0.85);
+  --text-heading: var(--tone-1);
+  --accent: var(--tone-2);
+  --accent-strong: var(--tone-3);
+
+  --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+
+  /* spotlight vars (updated from JS) */
+  --mouse-x: 50vw;
+  --mouse-y: 30vh;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  margin: 0;
+}
+
+/* ---------- Spotlight Overlay ---------- */
+.cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: radial-gradient(
+    140px circle at var(--mouse-x, 50vw) var(--mouse-y, 30vh),
+    rgba(77, 61, 97, 0.2),
+    transparent 99%
+  );
+  mix-blend-mode: normal;
+  transition: background 80ms linear;
+}
+
+/* ---------- Layout ---------- */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Left Column (Sticky sidebar) */
+.left-column {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  /* justify-content: center;  */
+
+  transform: translateY(4rem);
+  padding: 4rem 0;
+}
+.header-content { flex-grow: 0; }
+.name { color: var(--text-primary); font-size: 3.2rem; margin: 0; }
+.title { color: var(--text-heading); font-size: 1.25rem; margin-top: 0.5rem; }
+.bio { font-size: 1.05rem; line-height: 1.5; color: var(--text-secondary); }
+
+/* Sidebar Nav */
+.nav-links { margin-top: 0rem; }
+.nav-links ul { list-style: none; padding: 0; }
+.nav-links li { margin: 1.5rem 0; }
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+.nav-link span {
+  width: 30px; height: 2px;
+  background-color: var(--text-secondary);
+  margin-right: 1rem;
+  transition: all 0.2s ease;
+}
+.nav-link:hover,
+.nav-link.active { color: var(--text-primary); }
+.nav-link:hover span,
+.nav-link.active span { width: 60px; background-color: var(--accent); }
+
+/* Contact links at bottom of left column */
+.contact-links {
+  margin-top: auto;           /* push to the bottom */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  justify-content: flex-start;
+  padding-top: 1.5rem;
+}
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.contact-links a i { font-size: 1.1rem; }
+.contact-links a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---------- Right Column (Content) ---------- */
+.right-column { padding: 4rem 0; }
+
+/* Prevent heading cropping when navigating with anchors */
+.right-column section { scroll-margin-top: 120px; }
+
+.right-column section {
+  margin-bottom: 8rem;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* ---------- Page Sections (Gradient Style C) ---------- */
+.page-section {
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  background: rgba(82, 121, 111, 0.10);
+  margin-bottom: 6rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* transform: translateY(-40px); */
+}
+.page-section:nth-of-type(even) {
+  background: rgba(53, 79, 82, 0.12);
+}
+.page-section:hover {
+  background-color: rgba(82, 121, 111, 0.18);
+  transform: translateY(-4px);
+}
+
+/* Titles, Cards, Chips */
+.section-title {
+  color: var(--text-heading);
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.card {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 2.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  background-color: var(--bg-secondary);
+  border-color: rgba(132, 169, 140, 0.18);
+  box-shadow: 0 0 20px rgba(53, 79, 82, 0.22);
+}
+
+.card-date { font-family: var(--font-mono); font-size: 0.95rem; }
+.card-title { color: var(--text-primary); font-size: 1.25rem; }
+.card-description { line-height: 1.6; }
+
+.tech-list {
+  display: flex; flex-wrap: wrap;
+  gap: 0.5rem; list-style: none;
+  padding: 0; margin-top: 1rem;
+}
+.tech-list li {
+  background-color: rgba(132, 169, 140, 0.18);
+  color: var(--text-primary);
+  padding: 0.3rem 0.7rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(132, 169, 140, 0.35);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .main-container { grid-template-columns: 1fr; }
+  .left-column { position: static; height: auto; padding-bottom: 2rem; }
+  .right-column { padding-top: 0; }
+  .right-column section { transform: translateY(0); opacity: 1; }
+  .right-column section { scroll-margin-top: 80px; } /* smaller anchor offset */
+  .contact-links { justify-content: center; margin-top: 2rem; }
+}
+
+/* ---------- Hide Scrollbar ---------- */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+body::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
+
+
+/* ---- VANTA background container ---- */
+/* #vanta-bg {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#vanta-bg canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 0 !important;
+} */
+
+#vanta-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;      /* stays behind everything */
+  overflow: hidden;
+}
+
+#vanta-bg canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+
+
+.main-container {
+  position: relative;
+  z-index: 1; /* ensures your content stays above the animation */
+}
+
+
+
+/* ---------- Education Card Backgrounds ---------- */
+.bu-bg, .iitg-bg {
+  background-size: cover;
+  background-position: center;
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.bu-bg::before,
+.iitg-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 62, 70, 0.75); /* dark overlay for readability */
+  backdrop-filter: blur(0.5px);
+  z-index: 0;
+  transition: background 0.3s ease;
+}
+
+.bu-bg:hover::before,
+.iitg-bg:hover::before {
+  background: rgba(47, 62, 70, 0.5);
+}
+
+.bu-bg *, .iitg-bg * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add specific images for each */
+.bu-bg {
+  background-image: url('images/bu-campus.jpg'); /* replace with your image path */
+}
+
+.iitg-bg {
+  background-image: url('images/iitg-campus.jpg'); /* replace with your image path */
+}
+
