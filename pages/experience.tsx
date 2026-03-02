@@ -27,6 +27,23 @@ const About = () => {
             <ul className="timeline">
               <li className="mt-2">
                 <a
+                  aria-label="ML Engineer, Boston Public Library"
+                  tabIndex={-1}
+                >
+                  ML Engineer · Boston Public Library
+                </a>
+                <a className="float-right" tabIndex={-1}>
+                  <Date /> <b>Jan 2026 — Present</b>
+                </a>
+                <p>
+                  Extending a pgVector-based RAG pipeline to index full-text document content alongside metadata, experimenting with hybrid embedding strategies to improve retrieval relevance and ranking.
+                </p>
+                <p>
+                  Building a gold-standard evaluation dataset and implementing an end-to-end testing framework using DeepEval to track precision, recall, and MRR metrics longitudinally across the BPL Digital Commonwealth collection.
+                </p>
+              </li>
+              <li className="mt-2">
+                <a
                   aria-label="Research Intern at MedImg Lab, IIT Delhi and AIIMS Delhi"
                   tabIndex={-1}
                 >

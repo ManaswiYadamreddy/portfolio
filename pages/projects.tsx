@@ -21,7 +21,7 @@ const projects = [
       'Analyzing MBTA bus performance to identify service equity gaps by correlating historical ridership and reliability with community demographics.',
       'Prototyping time-series and tree-based models to forecast delays and isolate drivers of poor reliability for underserved neighborhoods.',
     ],
-    github: 'https://github.com/your-username/boston-bus-equity', // TODO: replace with real link
+    github: 'https://github.com/Chava-Sai/Boston-Bus-Equity-CS506-Final-Project', // TODO: replace with real link
     tech: ['Python', 'Pandas', 'Scikit-learn', 'Time-series', 'Data Viz'],
   },
   {
@@ -31,7 +31,7 @@ const projects = [
       'Built a dual-branch vision-language model that boosted segmentation quality versus CLIPSeg (Mean IoU ≈ 0.882, Mean Dice ≈ 0.923).',
       'A frequency-aware spatial refinement branch, inspired by wavelet features with attention, improved boundary recovery and delineation in low-contrast medical images.',
     ],
-    github: 'https://github.com/your-username/medvisionclip', // TODO: replace with real link
+    // github: 'https://github.com/ManaswiYadamreddy/medvisionclip', // TODO: replace with real link
     tech: [
       'PyTorch',
       'Transformers',
@@ -47,7 +47,7 @@ const projects = [
       'Digitized ECG paper records into time-series signals using an OpenCV pipeline (thresholding + contrast enhancement).',
       'Trained a hybrid CNN-LSTM on PTB-XL, achieving ~98.87% accuracy on cardiac abnormality classification.',
     ],
-    github: 'https://github.com/your-username/automated-ecg-interpretation', // TODO: replace
+    github: 'https://github.com/ManaswiYadamreddy/Automated-ECG-Interpretation', // TODO: replace
     tech: ['TensorFlow', 'Keras', 'OpenCV', 'CNN', 'LSTM'],
   },
   {
@@ -57,7 +57,7 @@ const projects = [
       'Implemented DCGAN, Conditional GAN, and WGAN in TensorFlow/Keras for data augmentation on limited datasets.',
       'Used SSIM and PSNR to compare fidelity and selected DCGAN for its stronger feature realism in this setting.',
     ],
-    github: 'https://github.com/your-username/gan-image-generation', // TODO: replace
+    github: 'https://github.com/ManaswiYadamreddy/Generating-Synthetic-Images-Using-GANs', // TODO: replace
     tech: ['TensorFlow', 'Keras', 'GANs', 'SSIM', 'PSNR'],
   },
 ];
