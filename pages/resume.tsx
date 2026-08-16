@@ -11,14 +11,14 @@ import Link from 'next/link';
 import Layout, { PageWrapper } from '../components/Layout';
 import FooterLink from '../components/Footer';
 
-const Resume = () => {
-  const resumeData =
-    'https://www.canva.com/design/DAEEkidwA2Q/view?utm_content=DAEEkidwA2Q&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink';
+/* Google Drive file id for the resume. Override with NEXT_PUBLIC_RESUME_LINK. */
+const RESUME_FILE_ID =
+  process.env.NEXT_PUBLIC_RESUME_LINK || '176kL2h6QSwIojB8WJYck1f0Artak8U3i';
 
-  const previewData = `${resumeData.substr(
-    0,
-    resumeData.lastIndexOf('/') + 1
-  )}view?embed`;
+const RESUME_URL = `https://drive.google.com/file/d/${RESUME_FILE_ID}/view?usp=sharing`;
+
+const Resume = () => {
+  const previewData = `https://drive.google.com/file/d/${RESUME_FILE_ID}/preview`;
 
   return (
     <Layout title="Resume">
@@ -34,7 +34,7 @@ const Resume = () => {
               .{' '}
               <b>
                 <a
-                  href={`https://drive.google.com/file/d/${process.env.NEXT_PUBLIC_RESUME_LINK}/view?usp=sharing`}
+                  href={RESUME_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Go to Resumé Page"
@@ -45,7 +45,7 @@ const Resume = () => {
               or{' '}
               <b>
                 <a
-                  href={`https://drive.google.com/file/d/${process.env.NEXT_PUBLIC_RESUME_LINK}/view?usp=sharing`}
+                  href={RESUME_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Go to Resumé Page"
@@ -62,7 +62,7 @@ const Resume = () => {
             allowFullScreen
             width="740"
             height="780"
-            title="Adenekan Wonderful Resumé"
+            title="Manaswi Yadamreddy Resumé"
           />
         </PageSection>
         <br />

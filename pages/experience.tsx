@@ -27,19 +27,72 @@ const About = () => {
             <ul className="timeline">
               <li className="mt-2">
                 <a
-                  aria-label="ML Engineer, Boston Public Library"
+                  aria-label="Machine Learning Research Intern at Brigham and Women's Hospital, Harvard Medical School"
                   tabIndex={-1}
                 >
-                  ML Engineer · Boston Public Library
+                  Machine Learning Research Intern · Brigham and Women&apos;s
+                  Hospital, Harvard Medical School
                 </a>
                 <a className="float-right" tabIndex={-1}>
-                  <Date /> <b>Jan 2026 — Present</b>
+                  <Date /> <b>May 2026 - Present</b>
                 </a>
                 <p>
-                  Extending a pgVector-based RAG pipeline to index full-text document content alongside metadata, experimenting with hybrid embedding strategies to improve retrieval relevance and ranking.
+                  Developing a two-prior score-based diffusion model that removes
+                  structured clutter from transesophageal echocardiography,
+                  training unpaired tissue and clutter priors on 13K patches from
+                  58 patients.
                 </p>
                 <p>
-                  Building a gold-standard evaluation dataset and implementing an end-to-end testing framework using DeepEval to track precision, recall, and MRR metrics longitudinally across the BPL Digital Commonwealth collection.
+                  Building an inverse finite element pipeline to predict calcified
+                  nodule stiffness from CT volumes, replacing assumed
+                  density-to-stiffness values with a transferable CT-to-stiffness
+                  law for TAVR planning.
+                </p>
+              </li>
+              <li className="mt-2">
+                <a
+                  aria-label="Machine Learning Engineer at BU Spark!, Boston University"
+                  tabIndex={-1}
+                >
+                  Machine Learning Engineer · BU Spark!, Boston University
+                </a>
+                <a className="float-right" tabIndex={-1}>
+                  <Date /> <b>Jan 2026 - May 2026</b>
+                </a>
+                <p>
+                  Client: Boston Public Library (Digital Commonwealth).
+                </p>
+                <p>
+                  Architected a hybrid retrieval pipeline over 1.8M+ chunks of the
+                  Digital Commonwealth archive, fusing BGE-M3 dense and sparse
+                  retrieval with reciprocal rank fusion to raise Hit@50 from 0.40
+                  to 0.66.
+                </p>
+                <p>
+                  Added a Neo4j GraphRAG layer with spaCy entity extraction and
+                  GPT-4o cited generation, deployed as an app that grounds every
+                  answer in real archival sources.
+                </p>
+              </li>
+              <li className="mt-2">
+                <a
+                  aria-label="Graduate Research Assistant at the Image and Video Computing Lab"
+                  tabIndex={-1}
+                >
+                  Graduate Research Assistant · Image and Video Computing Lab
+                </a>
+                <a className="float-right" tabIndex={-1}>
+                  <Date /> <b>Jan 2026 - May 2026</b>
+                </a>
+                <p>
+                  Built BLIP ITM and SigLIP 2 scoring pipelines to filter noisy
+                  frame-caption pairs from a 264K-clip infant touch dataset,
+                  preparing clean data for multimodal contrastive pretraining.
+                </p>
+                <p>
+                  Benchmarked vision-language scorers against human-annotated
+                  labels to set calibrated filtering thresholds, contributing to a
+                  dataset paper accepted at IEEE ICDL 2026.
                 </p>
               </li>
               <li className="mt-2">
@@ -50,20 +103,17 @@ const About = () => {
                   Research Intern · MedImg Lab, IIT Delhi &amp; AIIMS Delhi
                 </a>
                 <a className="float-right" tabIndex={-1}>
-                  <Date /> <b>May 2024 — Aug 2025</b>
+                  <Date /> <b>May 2024 - Aug 2025</b>
                 </a>
                 <p>
-                  Built components of a CAD tool for an ICMR-funded project on early
-                  detection of metastatic pulmonary nodules from 3D CT scans.
+                  Delivered a CAD framework for an ICMR-funded study classifying
+                  benign versus metastatic pulmonary nodules in sarcoma patients,
+                  trained on 3D CT from 460 patients with patient-wise splits.
                 </p>
                 <p>
-                  Designed a multi-level contextual 3D CNN to capture local–global
-                  features aimed at improving sensitivity and specificity while
-                  reducing false positives.
-                </p>
-                <p>
-                  Collaborated with clinicians to align metrics and error analysis with
-                  practical diagnostic needs.
+                  Designed an ensemble of multi-scale 3D CNNs with spatial and
+                  channel attention reaching 0.85 sensitivity and 0.85 AUC-ROC,
+                  with Grad-CAM++ maps to surface model reasoning.
                 </p>
               </li>
             </ul>

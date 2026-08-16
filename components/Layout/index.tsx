@@ -1,14 +1,8 @@
 /* -------------------------------------------------------------------------- */
 /*                            External Dependecies                            */
 /* -------------------------------------------------------------------------- */
-import React, {
-  PropsWithChildren,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
+import React, { PropsWithChildren, useContext, useEffect } from 'react';
 import { ScoutBar } from 'scoutbar';
-import SignalCursor from '../SignalCursor';
 
 /* -------------------------- Internal Dependencies ------------------------- */
 import Navbar from '../Navbar';
@@ -17,7 +11,7 @@ import { initGA, logPageView } from '../Utils/analytics';
 import Cursor from '../Cursor';
 import SkipToMain from '../A11y/skip-to-main';
 
-import { BackLay, BodyStyling, Main } from './style';
+import { BodyStyling, Main } from './style';
 import { actions } from './data';
 import Head from 'next/head';
 
@@ -25,7 +19,6 @@ const Layout: React.FC<PropsWithChildren<{
   title?: string;
 }>> = ({ children, title = 'Home' }) => {
   const { theme, loadTheme, show, setTheme } = useContext(AppContext);
-  const [skew, setSkew] = useState(10);
   const logPage = () => {
     if (!(window as any).GA_INITIALIZED) {
       initGA();
@@ -52,11 +45,6 @@ const Layout: React.FC<PropsWithChildren<{
       </Head>
       <SkipToMain content="main-content" />
       <Navbar />
-      {/* <BackLay title={title}>
-        <h1 aria-hidden="true">
-          {title === 'Home' ? 'CW.' : title.concat('.')}
-        </h1>
-      </BackLay> */}
       <Cursor />
       <ScoutBar actions={actions(setTheme)} brandColor="var(--cw)" />
       {!show && <>{children}</>}

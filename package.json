@@ -1,11 +1,11 @@
 {
-  "name": "codewonders",
+  "name": "portfolio",
   "version": "1.5.0",
-  "private": false,
+  "private": true,
   "license": "MIT",
-  "repository": "git://github.com/adenekan41/codewonders.git",
-  "description": "Adenekan Wonderful's Website",
-  "author": "Adenekan Wonderful <hellocodewonders@gmail.com> (https://codewonders.dev)",
+  "repository": "git://github.com/ManaswiYadamreddy/portfolio.git",
+  "description": "Manaswi Yadamreddy's Portfolio",
+  "author": "Manaswi Yadamreddy <manaswiy@bu.edu>",
  "scripts": {
   "dev": "next dev",
   "build": "next build",

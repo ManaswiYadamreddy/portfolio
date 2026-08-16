@@ -428,35 +428,6 @@ export const SocialMedia = styled.div`
   }
 `;
 
-export const BackLay = styled.div`
-  margin: 0;
-
-  h1 {
-    font-family: Abril FatFace;
-    font-size: 29.42vmin;
-    ${(props) =>
-      props.title === 'About Me' ||
-      props.title === 'Contact' ||
-      props.title === 'Home'
-        ? css`
-            writing-mode: unset;
-          `
-        : css`
-            writing-mode: tb-rl;
-          `}
-
-    letter-spacing: -0.3rem;
-    white-space: pre;
-    color: var(--mark);
-    position: fixed;
-    left: -4rem;
-    /* transition: all 0.8s ease; */
-    opacity: 1;
-    z-index: -1;
-    bottom: 0px;
-  }
-`;
-
 export const Main = styled.main`
   &:before {
     /* background: #1b1b1b;

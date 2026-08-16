@@ -122,10 +122,23 @@ const Navbar = () => {
                     Projects
                   </Link>
                 </li>
+                <li className="nav-item hover__bottom">
+                  <Link
+                    href="/publications"
+                    activeClassName="is-active"
+                    className="nav-link"
+                    id="cardHover"
+                    onClick={closeShow}
+                    aria-label="Go To Publications Page"
+                    title="Publications"
+                  >
+                    Publications
+                  </Link>
+                </li>
 
                 <li className="nav-item hover__bottom">
                   <a
-                    href="https://drive.google.com/file/d/1wZXb8jPJ_2syVhY4Kg1NOeGO3Yw8FGHR/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/176kL2h6QSwIojB8WJYck1f0Artak8U3i/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nav-link"

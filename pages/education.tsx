@@ -20,12 +20,15 @@ const Education = () => {
             {/* ===================== */}
             <EducationCard className="bu">
               <CardContent>
-                <CardDate>Expected Dec 2026</CardDate>
-                <CardTitle>M.S., Artificial Intelligence · Boston University</CardTitle>
+                <CardDate>Sep 2025 - Dec 2026 (Expected)</CardDate>
+                <CardTitle>
+                  M.S., Artificial Intelligence · Boston University
+                </CardTitle>
+                <CardMeta>GPA: 3.86 · Boston, MA</CardMeta>
                 <CardDescription>
-                  Relevant Coursework: Deep Learning, Principles of Machine Learning,
-                  Artificial Intelligence, Data Science Tools &amp; Applications,
-                  Image &amp; Video Computing, Natural Language Processing.
+                  Relevant Coursework: Deep Learning, Machine Learning, Image
+                  &amp; Video Computing, Natural Language Processing, Agentic
+                  AI.
                 </CardDescription>
               </CardContent>
             </EducationCard>
@@ -35,12 +38,14 @@ const Education = () => {
             {/* ===================== */}
             <EducationCard className="iitg">
               <CardContent>
-                <CardDate>Jul 2021 — May 2025</CardDate>
-                <CardTitle>B.Tech, Engineering Physics · IIT Guwahati</CardTitle>
+                <CardDate>Jul 2021 - May 2025</CardDate>
+                <CardTitle>
+                  B.Tech, Engineering Physics · IIT Guwahati
+                </CardTitle>
+                <CardMeta>Guwahati, India</CardMeta>
                 <CardDescription>
-                  Relevant Coursework: Data Structures &amp; Algorithms,
-                  Operating Systems, Database Management Systems, Recommendation
-                  System Design Using Deep Learning.
+                  Relevant Coursework: Data Structures and Algorithms, Operating
+                  Systems, Database Management Systems, Recommendation Systems.
                 </CardDescription>
               </CardContent>
             </EducationCard>
@@ -67,16 +72,15 @@ export const PageSection = styled.div`
   }
 `;
 
-// Grid that holds both cards (2 per row on desktop)
+// Grid that holds both cards (one per row)
 const EducationGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr; /* one per row */
-  gap: 3rem; /* more vertical breathing room */
+  grid-template-columns: 1fr;
+  gap: 3rem;
   margin-bottom: 3.5rem;
 `;
 
-
-// Base card with background image + dark overlay
+// Base card with background image + gradient scrim
 const EducationCard = styled.article`
   position: relative;
   border-radius: 14px;
@@ -84,7 +88,6 @@ const EducationCard = styled.article`
   min-height: 320px;
   display: flex;
   align-items: stretch;
-  color: var(--cw);
 
   /* Background image per school */
   &.bu {
@@ -98,42 +101,46 @@ const EducationCard = styled.article`
   background-size: cover;
   background-position: center;
 
-  /* Dark overlay for readability */
-    &::before {
+  /*
+   * Text sits on a photo, so it cannot follow the light/dark theme.
+   * A bottom-weighted scrim keeps the image bright at the top while
+   * guaranteeing contrast behind the copy at the bottom.
+   */
+  &::before {
     content: '';
     position: absolute;
     inset: 0;
-
-    /* normal state: readable but slightly dark */
-    background: rgba(10, 13, 20, 0.2);
-
-    backdrop-filter: blur(0.4px);
+    background: linear-gradient(
+      to bottom,
+      rgba(6, 9, 15, 0.25) 0%,
+      rgba(6, 9, 15, 0.55) 45%,
+      rgba(6, 9, 15, 0.85) 100%
+    );
     z-index: 0;
     transition: background 0.25s ease;
-    }
+  }
 
-
-
+  /* Hover brightens the image slightly but never below readable contrast */
   &:hover::before {
-    /* hover: brighter image */
-    background: rgba(10, 13, 20, 0.001);
-    }
-
+    background: linear-gradient(
+      to bottom,
+      rgba(6, 9, 15, 0.15) 0%,
+      rgba(6, 9, 15, 0.45) 45%,
+      rgba(6, 9, 15, 0.78) 100%
+    );
+  }
 
   /* Subtle hover lift */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
 
-
-    &:hover {
+  &:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
-    }
-
-
+  }
 `;
 
-// Content to sit above overlay
+// Content to sit above the scrim
 const CardContent = styled.div`
   position: relative;
   z-index: 1;
@@ -141,6 +148,7 @@ const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
 
   @media (max-width: 600px) {
     padding: 1.8rem 1.5rem;
@@ -149,25 +157,32 @@ const CardContent = styled.div`
 
 const CardDate = styled.p`
   margin: 0 0 0.6rem;
-  font-family: var(--font-mono, monospace);
+  font-family: var(--font-family-monospace, monospace);
   font-size: calc(var(--font-xs, 11px) + 0.2px);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.85);
 `;
 
 const CardTitle = styled.h2`
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.4rem;
   font-size: calc(var(--font-md) + 1.6px);
   font-weight: 600;
-  color: var(--cw);
+  color: #ffffff;
+`;
+
+const CardMeta = styled.p`
+  margin: 0 0 0.7rem;
+  font-size: calc(var(--font-sm) - 0.2px);
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.82);
 `;
 
 const CardDescription = styled.p`
   margin: 0;
   font-size: calc(var(--font-sm) + 0.4px);
   line-height: 1.8;
-  color: rgba(230, 236, 255, 0.9);
+  color: rgba(255, 255, 255, 0.92) !important;
 `;
 
 export default Education;

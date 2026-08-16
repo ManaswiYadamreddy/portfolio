@@ -22,37 +22,18 @@ export const actions = (theme: () => void) => [
     keyboardShortcut: ['r'],
   }),
   createScoutAction({
+    label: 'Publications',
+    href: '/publications',
+    keyboardShortcut: ['p'],
+  }),
+  createScoutAction({
     label: 'Contact Me',
     href: '/contact',
     keyboardShortcut: ['c'],
   }),
 
   createScoutSection({
-    label: 'About Adenekan Wonderful',
-
-    children: [
-      createScoutAction({
-        label: 'About Adenekan Wonderful',
-        href: '/about',
-        keyboardShortcut: ['a'],
-      }),
-      createScoutAction({
-        label: "Adenekan Wonderful's Reads",
-        href: '/about#reads',
-      }),
-      createScoutAction({
-        label: 'Playlist',
-        href: '/about#playlist',
-      }),
-      createScoutAction({
-        label: "Adenekan's Lens",
-        href: '/about#lens',
-      }),
-    ],
-  }),
-
-  createScoutSection({
-    label: 'BY Codewonders',
+    label: 'Work',
 
     children: [
       createScoutPage({

@@ -44,8 +44,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/* 🔹 removed this.props.styleTags – styles are injected via `styles` above */}
-
           {/* ✅ Keep / edit these meta tags to your info instead of the original author's */}
           <meta name="author" content="Manaswi Yadamreddy" />
           <meta
@@ -64,11 +62,6 @@ export default class MyDocument extends Document {
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <meta
-            name="msapplication-config"
-            content="/icons/browserconfig.xml"
-          />
-          {/* ⚠️ Removed hard-coded `next-head-count` meta */}
 
           {/* Favicon + app icons */}
           <link rel="shortcut icon" href="/favicon.ico" />
@@ -143,7 +136,7 @@ export default class MyDocument extends Document {
           />
           <meta
             name="msapplication-TileImage"
-            content="/ms-icon-144x144.png"
+            content="/icons/ms-icon-144x144.png"
           />
           <link rel="manifest" href="/manifest.json" />
           <meta name="robots" content="index, nofollow" />
