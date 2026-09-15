@@ -138,7 +138,7 @@ const Navbar = () => {
 
                 <li className="nav-item hover__bottom">
                   <a
-                    href="https://drive.google.com/file/d/176kL2h6QSwIojB8WJYck1f0Artak8U3i/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1vQ_9JdNo6_vMfNh1x6fpGZ3fV-zQ94sO/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nav-link"

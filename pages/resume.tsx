@@ -13,7 +13,7 @@ import FooterLink from '../components/Footer';
 
 /* Google Drive file id for the resume. Override with NEXT_PUBLIC_RESUME_LINK. */
 const RESUME_FILE_ID =
-  process.env.NEXT_PUBLIC_RESUME_LINK || '176kL2h6QSwIojB8WJYck1f0Artak8U3i';
+  process.env.NEXT_PUBLIC_RESUME_LINK || '1vQ_9JdNo6_vMfNh1x6fpGZ3fV-zQ94sO';
 
 const RESUME_URL = `https://drive.google.com/file/d/${RESUME_FILE_ID}/view?usp=sharing`;
 
